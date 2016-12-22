@@ -15,7 +15,7 @@ function compare02(oldData,newData){
 }
         
 //==================This method only runs up to 100,000=================
-function remove_duplicates(a,b){   
+function remove_duplicates(a,b){    
     a.forEach(function(a_ele){
         for (var j = 0, len2 = b.length; j < len2; j++) { 
             if (a_ele.firstName+ a_ele.lastName === b[j].firstName+b[j].lastName) {
