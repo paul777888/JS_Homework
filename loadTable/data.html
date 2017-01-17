@@ -1,0 +1,173 @@
+
+
+<html>
+<head>
+  <title>JavaScript Contact Information</title>
+  <style>
+    html, body {
+      font-family:		Verdana;
+      font-size:			11px;
+      font-weight:		normal;
+      padding:			8px;
+      margin:				0px;
+      color:				black;
+    }
+    h1 {
+      font-size:			16px;
+      margin:				0px 0px 0px 0px; /* t r b l */
+    }
+    p {
+      font-size:			11px;
+      margin:				0px 0px 8px 0px; /* t r b l */
+    }
+    a {
+      color:				black;
+      text-decoration:	none;
+    }
+    a.selected {
+      text-decoration:	underline;
+    }
+    a:hover {
+      text-decoration:	underline;
+    }
+    table, td, th {
+      padding:			1px 2px 1px 2px; /* t r b l */
+      font-size:			11px;
+      border:				1px solid black;
+      border-collapse:	collapse;
+      text-align:			left;
+    }
+    th {
+      background-color:	#BBBBBB;
+      font-weight:		bold;
+    }
+  </style>
+</head>
+
+<body>
+<h1>JavaScript</h1>
+<p>Employee Contact Information Sheet</p>
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+  <col width="10%"/><col width="10%"/><col width="10%"/><col width="10%"/>
+  <col width="13%"/><col width="*"/><col width="*"/><col width="6%"/>
+  <tr>
+    <th><a href="?sort=givenname" class="selected">First Name</a></th>
+    <th><a href="?sort=sn" >Last Name</a></th>
+    <th><a href="?sort=physicaldeliveryofficename" >Extension</a></th>
+    <th><a href="?sort=telephonenumber" >Cell Number</a></th>
+    <th><a href="?sort=homephone" >Alternative Number<br/>Emergency Only</a></th>
+    <th><a href="?sort=title" >Title</a></th>
+    <th><a href="?sort=mail" >E-mail Address</a></th>
+  </tr>
+  <tr>
+    <td>Tom</td>
+    <td>Zhang</td>
+    <td>2065<br/></td>
+    <td>647-333-4850<br/></td>
+    <td>289-234-1961</td>
+    <td>Software Developer</td>
+    <td><u><a href='mailto:tomz@jsrocks.com'>tomz@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Jerry</td>
+    <td>Li</td>
+    <td>3847<br/></td>
+    <td>416-342-5947<br/></td>
+    <td>289-294-5760</td>
+    <td>Team Lead, Front End</td>
+    <td><u><a href='mailto:jerryl@jsrocks.com'>jerryl@jsrocks.com</a></u></td>
+  </tr>
+  <tr>
+    <td>Mike</td>
+    <td>Zhang</td>
+    <td>3116<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Software Developer</td>
+    <td><u><a href='mailto:mikez@jsrocks.com'>mikez@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Deric</td>
+    <td>Zhao</td>
+    <td>3273<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>QA Analyst</td>
+    <td><u><a href='mailto:dericz@jsrocks.com'>dericz@jsrocks.com</a></u></td>
+  </tr>
+  <tr>
+    <td>Brian</td>
+    <td>Sun</td>
+    <td>3113<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Flash Designer</td>
+    <td><u><a href='mailto:brians@jsrocks.com'>brians@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Alex</td>
+    <td>Xie</td>
+    <td>3184<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Database Administrator</td>
+    <td><u><a href='mailto:alexx@jsrocks.com'>alexx@jsrocks.com</a></u></td>
+  </tr>
+  <tr>
+    <td>Helen</td>
+    <td>Wu</td>
+    <td>3109<br/></td>
+    <td>416-867-2738<br/></td>
+    <td></td>
+    <td>QA Analyst</td>
+    <td><u><a href='mailto:helenw@jsrocks.com'>helenw@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Paul</td>
+    <td>Wang</td>
+    <td>3320<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Senior Software Developer</td>
+    <td><u><a href='mailto:paulw@jsrocks.com'>paulw@jsrocks.com</a></u></td>
+  </tr>
+  <tr>
+    <td>Tim</td>
+    <td>Liu</td>
+    <td>3339<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Software Developer Mobile Coop</td>
+    <td><u><a href='mailto:timl@jsrocks.com'>timl@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Vince</td>
+    <td>Hu</td>
+    <td>3158<br/></td>
+    <td><br/></td>
+    <td></td>
+    <td>Sr. Software Developer</td>
+    <td><u><a href='mailto:vinceh@jsrocks.com'>vinceh@jsrocks.com</a></u></td>
+  </tr>
+  <tr>
+    <td>Henry</td>
+    <td>Xiang</td>
+    <td>3021<br/></td>
+    <td>416-857-0595<br/></td>
+    <td></td>
+    <td>Sr. Manager, Information Security and Infastructure</td>
+    <td><u><a href='mailto:henryx@jsrocks.com'>henryx@jsrocks.com</a></u></td>
+  </tr>
+  <tr bgcolor=DDDDDD>
+    <td>Eric</td>
+    <td>Jia</td>
+    <td>3081<br/></td>
+    <td>647-753-0483<br/></td>
+    <td>416-785-6843</td>
+    <td>Team Lead, Infrastructure Design</td>
+    <td><u><a href='mailto:ericj@jsrocks.com'>ericj@jsrocks.com</a></u></td>
+  </tr>
+</table>
+</body>
+
+</html>
