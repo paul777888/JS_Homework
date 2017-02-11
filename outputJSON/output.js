@@ -110,32 +110,34 @@ function loadTableData(url,filePath){
         })
         res.on('end',function(){
             var data = body;
-            tableData = data.replace(/<tr bgcolor=DDDDDD>/gi,"<tr>").split("<tr>").splice(1,data.length-1);
-            tableHeader = tableData[0].split("<th>");
-            header = tableHeader.splice(1,tableHeader.length-1);
-            for(var i=0;i<header.length;i++){
-                header[i]=header[i].replace(/<\/?[^>]+(>|$)/g, "").replace(/-/g,'').replace(/ /g,'').trim();
-            }
-            for(var k=1;k<tableData.length;k++){
-                employee = tableData[k].split("<td>");
-                employee = employee.splice(1,employee.length-1)
-                var json={}; 
-                for(var h=0;h<header.length;h++){   
-                   var item = employee[h].replace(/<\/?[^>]+(>|$)/g, "").trim();
-                   json[header[h]] = item;
-                   if(h===header.length-1){        
-                      jsonData.push(json);
-                   }
-                }
-            }
+            loadData(data);
             writeOutput(JSON.stringify(jsonData));
             if(filePath!=="firstFile"){
                processFile(filePath,jsonData); 
-            }
-            
-            })
-        
+            }           
+        })        
     }).on('error',function(e){
         console.log("error message: "+e.message);
     });   
+}
+
+function loadData(data){
+    tableData = data.replace(/<tr bgcolor=DDDDDD>/gi,"<tr>").split("<tr>").splice(1,data.length-1);
+    tableHeader = tableData[0].split("<th>");
+    header = tableHeader.splice(1,tableHeader.length-1);
+    for(var i=0;i<header.length;i++){
+        header[i]=header[i].replace(/<\/?[^>]+(>|$)/g, "").replace(/-/g,'').replace(/ /g,'').trim();
+    }
+    for(var k=1;k<tableData.length;k++){
+        employee = tableData[k].split("<td>");
+        employee = employee.splice(1,employee.length-1)
+        var json={}; 
+        for(var h=0;h<header.length;h++){   
+           var item = employee[h].replace(/<\/?[^>]+(>|$)/g, "").trim();
+           json[header[h]] = item;
+           if(h===header.length-1){        
+              jsonData.push(json);
+           }
+        }
+    }
 }
