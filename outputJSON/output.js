@@ -15,8 +15,12 @@ main();
 function main(){
     var lastFilePath = './files'; //Location of files
     var firstFile = 'firstFile'; //first file
+    var resultsFolder = './results'
     if (!fs.existsSync(lastFilePath)){
         fs.mkdirSync(lastFilePath);
+    }
+    if (!fs.existsSync(resultsFolder)){
+        fs.mkdirSync(resultsFolder);
     }
     
     fs.readdir(lastFilePath, function(err, files) {
@@ -67,6 +71,7 @@ function compare(oldData,newData){
         resultDeleted:deleted,
         resultModified:modified
     }
+    writeResult(JSON.stringify(result));
     console.log(result);
     return result;
 }
@@ -95,6 +100,16 @@ function writeOutput(output){
     var now = new Date();
     var file_name = 'files/'+'Employee-table-' + now.getFullYear()+(now.getMonth()+1)+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds() +'.json';
     fs.writeFile(file_name,output,function(err){
+        if(err){
+            return console.log(err);
+        }      
+    })
+}
+
+function writeResult(result){
+    var now = new Date();
+    var file_name = 'results/'+'result-' + now.getFullYear()+(now.getMonth()+1)+now.getDate()+now.getHours()+now.getMinutes()+now.getSeconds() +'.json';
+    fs.writeFile(file_name,result,function(err){
         if(err){
             return console.log(err);
         }      
