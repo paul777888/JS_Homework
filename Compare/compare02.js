@@ -15,7 +15,8 @@ function compare02(oldData,newData){
 }
         
 //==================This method only runs up to 100,000=================
-function remove_duplicates(a,b){    
+function remove_duplicates(a,b){ 
+    console.log(a);
     a.forEach(function(a_ele){
         for (var j = 0, len2 = b.length; j < len2; j++) { 
             if (a_ele.firstName+ a_ele.lastName === b[j].firstName+b[j].lastName) {
@@ -33,32 +34,5 @@ function remove_duplicates(a,b){
        deleted = b;
     })   
 }
-
-//------------------To be continued--------
-//function remove_duplicates(a,b){
-//    b.forEach(function(b_ele){
-//        newArray.push(b_ele.ext);
-//    })
-//    
-//    a.forEach(function(a_ele, index){
-//        var idx = newArray.indexOf(a_ele.ext)
-//        if(idx!==-1){
-//            if(a_ele.firstName===b[idx].firstName){      if(a_ele.ext!==b[idx].ext||a_ele.cell!==b[idx].cell||a_ele.alt!==b[idx].alt||a_ele.title!==b[idx].title||a_ele.email!==b[idx].email) {
-//                       modified.push(a_ele);
-//                 }       
-//            }else{
-//               deleted.push(a_ele);
-//               added.push(b[idx]);  
-//            }  
-//        }else{    
-//               deleted.push(a_ele);
-//               if(index>0){
-//                 added.push(b[index-1]);  
-//               }
-//                 
-//        }                  
-//    });
-//}
-
 
 module.exports=compare02;
